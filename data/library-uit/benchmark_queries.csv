@@ -1,0 +1,6 @@
+query,gold_answer,metadata_filter,expected_doc_id
+Sinh vien UIT duoc muon giao trinh tai Thu vien UIT bao nhieu cuon trong bao lau va duoc gia han may lan?,"Sinh vien duoc muon 5 cuon giao trinh trong 90 ngay, duoc gia han 2 lan, moi lan 15 ngay.","{""audience"": ""student""}",library-borrowing-student
+Sinh vien tu nam 2 tro di muon gia han quyen truy cap co so du lieu dung chung thi phi moi nam la bao nhieu?,"Sinh vien tu nam 2 tro di can gia han quyen truy cap voi phi 25.000 dong moi nam tai Thu vien Trung tam.","{""audience"": ""student""}",library-account-student
+Can bo giang vien UIT truy cap co so du lieu dung chung co mat phi khong?,"Can bo - giang vien duoc mien phi quyen truy cap co so du lieu dung chung cua He thong Thu vien DHQG-HCM.","{""audience"": ""faculty""}",library-account-faculty
+Thu vien UIT mo cua thu Bay luc may gio va dong cua luc may gio?,"Thu Bay, Thu vien UIT mo cua luc 08:00 va dong cua luc 16:00.","{""audience"": ""all""}",library-hours
+Ban doc can lam gi de gia han tai lieu va chi duoc gia han truoc ngay het han bao lau?,"Ban doc dang nhap tai khoan, chon tai lieu can gia han, chon Renew Marked, xac nhan Yes; chi duoc gia han sach truoc ngay het han 1 hoac 2 ngay.","{""audience"": ""all""}",library-renewal-guide

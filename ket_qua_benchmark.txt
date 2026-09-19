@@ -1,0 +1,65 @@
+Benchmark corpus: data\library-uit
+Strategy: heading
+Chunks loaded: 22
+Queries: 5
+
+Query 1: Sinh vien UIT duoc muon giao trinh tai Thu vien UIT bao nhieu cuon trong bao lau va duoc gia han may lan?
+Gold: Sinh vien duoc muon 5 cuon giao trinh trong 90 ngay, duoc gia han 2 lan, moi lan 15 ngay.
+Filter: {'audience': 'student'}
+Expected doc: library-borrowing-student
+Top-3:
+  1. score=0.720 doc_id=library-borrowing-student chunk=3 relevant=YES
+     ## Chinh sach tai Thu vien UIT Chinh sach tai Thu vien UIT ap dung cho ban doc la can bo - giang vien, sinh vien va hoc vien tai UIT. Voi giao trinh, sinh vien duoc muon 5 cuon tro
+  2. score=0.589 doc_id=library-borrowing-student chunk=4 relevant=YES
+     ## Chinh sach dung chung trong He thong Thu vien DHQG-HCM Voi sach tham khao va giao trinh thuoc chinh sach dung chung, sinh vien duoc muon 5 cuon trong 21 ngay. Sinh vien duoc gia
+  3. score=0.522 doc_id=library-borrowing-student chunk=1 relevant=YES
+     # Chinh sach muon tai lieu cho sinh vien UIT
+
+Query 2: Sinh vien tu nam 2 tro di muon gia han quyen truy cap co so du lieu dung chung thi phi moi nam la bao nhieu?
+Gold: Sinh vien tu nam 2 tro di can gia han quyen truy cap voi phi 25.000 dong moi nam tai Thu vien Trung tam.
+Filter: {'audience': 'student'}
+Expected doc: library-account-student
+Top-3:
+  1. score=0.685 doc_id=library-account-student chunk=4 relevant=YES
+     ## Co so du lieu dung chung Sinh vien duoc mien phi quyen truy cap co so du lieu dung chung trong nam dau tien. Tu nam 2 tro di, sinh vien can gia han quyen truy cap voi phi 25.000
+  2. score=0.456 doc_id=library-account-student chunk=3 relevant=YES
+     ## Dich vu truy cap Sinh vien co the dung tai khoan de truy cap cong tra cuu OPAC, theo doi muon tra, gia han tai lieu va tim kiem tai lieu. Sinh vien cung co the dung ung dung di 
+  3. score=0.344 doc_id=library-borrowing-student chunk=4 relevant=NO
+     ## Chinh sach dung chung trong He thong Thu vien DHQG-HCM Voi sach tham khao va giao trinh thuoc chinh sach dung chung, sinh vien duoc muon 5 cuon trong 21 ngay. Sinh vien duoc gia
+
+Query 3: Can bo giang vien UIT truy cap co so du lieu dung chung co mat phi khong?
+Gold: Can bo - giang vien duoc mien phi quyen truy cap co so du lieu dung chung cua He thong Thu vien DHQG-HCM.
+Filter: {'audience': 'faculty'}
+Expected doc: library-account-faculty
+Top-3:
+  1. score=0.639 doc_id=library-account-faculty chunk=4 relevant=YES
+     ## Co so du lieu dung chung Can bo - giang vien duoc mien phi quyen truy cap co so du lieu dung chung cua He thong Thu vien DHQG-HCM. Kenh ho tro thong tin tai khoan va dich vu gom
+  2. score=0.474 doc_id=library-account-faculty chunk=3 relevant=YES
+     ## Dich vu truy cap Can bo - giang vien co the dung tai khoan de truy cap cong tra cuu OPAC, theo doi muon tra, gia han tai lieu va tim kiem tai lieu. Can bo - giang vien cung co t
+  3. score=0.397 doc_id=library-account-faculty chunk=1 relevant=YES
+     # Tai khoan Thu vien cho can bo giang vien UIT
+
+Query 4: Thu vien UIT mo cua thu Bay luc may gio va dong cua luc may gio?
+Gold: Thu Bay, Thu vien UIT mo cua luc 08:00 va dong cua luc 16:00.
+Filter: {'audience': 'all'}
+Expected doc: library-hours
+Top-3:
+  1. score=0.667 doc_id=library-hours chunk=2 relevant=YES
+     ## Lich phuc vu trong tuan Thu vien UIT phuc vu tu thu Hai den thu Sau, mo cua luc 07:30 va dong cua luc 18:00. Thu Bay, thu vien mo cua luc 08:00 va dong cua luc 16:00. Thu vien k
+  2. score=0.371 doc_id=library-hours chunk=1 relevant=YES
+     # Thoi gian phuc vu Thu vien UIT
+  3. score=0.334 doc_id=library-card-services chunk=2 relevant=NO
+     ## Cac loai the Thu vien UIT co hai loai the: the Thu vien vat ly va the Thu vien dien tu. Hai loai the duoc dung cho cac dich vu tai Thu vien UIT va cac thu vien thanh vien trong 
+
+Query 5: Ban doc can lam gi de gia han tai lieu va chi duoc gia han truoc ngay het han bao lau?
+Gold: Ban doc dang nhap tai khoan, chon tai lieu can gia han, chon Renew Marked, xac nhan Yes; chi duoc gia han sach truoc ngay het han 1 hoac 2 ngay.
+Filter: {'audience': 'all'}
+Expected doc: library-renewal-guide
+Top-3:
+  1. score=0.593 doc_id=library-renewal-guide chunk=3 relevant=YES
+     ## Luu y Ban doc chi duoc gia han sach truoc ngay het han 1 hoac 2 ngay. Neu gia han khong thanh cong, ban doc lien he Thu vien de duoc can bo thu vien ho tro giai quyet. Kenh ho t
+  2. score=0.493 doc_id=library-renewal-guide chunk=1 relevant=YES
+     # Huong dan gia han tai lieu Thu vien UIT
+  3. score=0.433 doc_id=library-card-services chunk=3 relevant=NO
+     ## Dich vu su dung bang the Ban doc co the dung the de muon va tra sach tai Thu vien UIT va cac thu vien thanh vien trong He thong Thu vien DHQG-HCM. Ban doc co the gia han tai lie
+
