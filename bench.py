@@ -7,6 +7,7 @@ import json
 import math
 import re
 import sys
+import unicodedata
 from pathlib import Path
 from typing import Callable
 
@@ -36,8 +37,17 @@ def parse_frontmatter(path: Path) -> tuple[dict[str, str], str]:
     return metadata, body.strip()
 
 
+def normalize_text(text: str) -> str:
+    text = text.replace("đ", "d").replace("Đ", "D")
+    return "".join(
+        char
+        for char in unicodedata.normalize("NFD", text)
+        if unicodedata.category(char) != "Mn"
+    ).lower()
+
+
 def tokenize(text: str) -> list[str]:
-    return re.findall(r"[a-zA-Z0-9_]+", text.lower())
+    return re.findall(r"\w+", normalize_text(text), flags=re.UNICODE)
 
 
 class LexicalEmbedder:
