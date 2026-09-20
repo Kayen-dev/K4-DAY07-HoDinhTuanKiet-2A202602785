@@ -18,6 +18,7 @@ from .embeddings import (
     _mock_embed,
 )
 from .models import Document
+from .llm import DEFAULT_LLM_MODEL, OpenAIResponsesLLM
 from .store import EmbeddingStore
 
 __all__ = [
@@ -38,4 +39,6 @@ __all__ = [
     "OPENAI_EMBEDDING_MODEL",
     "GEMINI_EMBEDDING_MODEL",
     "EMBEDDING_PROVIDER_ENV",
+    "OpenAIResponsesLLM",
+    "DEFAULT_LLM_MODEL",
 ]

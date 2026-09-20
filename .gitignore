@@ -5,8 +5,11 @@ __pycache__/
 .pytest_cache/
 
 # Environment
-.env
-.env.local
+.env*
+!.env.example
+
+# Local corpora and generated benchmark data
+data/
 
 # OS
 .DS_Store
